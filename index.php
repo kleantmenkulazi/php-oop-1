@@ -1,13 +1,13 @@
 <?php
 class Movie {
     private $title;        // string
-    public $director;     // string
-    public $actors;       // string / array di string
-    public $year;         // int
+    public $director;      // string
+    public $actors;        // string / array di string
+    public $year;          // int
     public $genres;        // string / array di string
-    public $plot;         // string
-    public $duration;     // int
-    public $vote;         // float
+    public $plot;          // string
+    public $duration;      // int
+    public $vote;          // float
 
 function __construct(
     string $title, 
@@ -17,12 +17,12 @@ function __construct(
     string $genres = null, 
     string $plot = null, 
     string $duration = null, 
-    float $vote = null,
+    float $vote = null
 ) {
     $this->setTitle($title);
     $this->directors = $director;
     $this->actors = $actors;
-    $this->year = $year;
+    $this->setYear($year);
     $this->genres = $genres;
     $this->plot = $plot;
     $this->duration = $duration;
@@ -40,6 +40,14 @@ public function setTitle($title) {
     }
     else {
          showError('Titolo non valido');
+    }
+}
+public function setYear($year) {
+    if (is_numeric($year)) {
+        $this->year = $year;
+    }
+    else {
+         showError('Anno non valido');
     }
 }
 }
