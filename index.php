@@ -7,10 +7,21 @@ class Movie {
     public $genre;        // string / array di string
     public $plot;         // string
     public $duration;     // int
-    public $vote;        // float
+    public $vote;         // float
 }
 $pulpFiction = new Movie();
+$pulpFiction->title = 'Pulp Fiction';
+$pulpFiction->director = 'Quentin Tarantino';
+$pulpFiction->title =[
+    'Uma Thurman',
+    'Samuel L. Jackson',
+    'John Travolta',
+    'Harvey Keitel'
+];
+$pulpFiction->year = 1994;
+
 var_dump($pulpFiction);
+
 
 
 ?>
