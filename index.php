@@ -1,6 +1,6 @@
 <?php
 class Movie {
-    public $title;        // string
+    private $title;        // string
     public $director;     // string
     public $actors;       // string / array di string
     public $year;         // int
@@ -8,9 +8,24 @@ class Movie {
     public $plot;         // string
     public $duration;     // int
     public $vote;         // float
+
+public function getTitle() {
+    return $title->title;
 }
+public function setTitle($title) {
+    if (is_string($title) && strlen($title) > 0) {
+        $this->title = $title;
+    }
+    else {
+         // Azione
+    }
+}
+}
+
+
 $pulpFiction = new Movie();
-$pulpFiction->title = 'Pulp Fiction';
+// $pulpFiction->title = 'Pulp Fiction';
+$pulpFiction->setTitle('Pulp Fiction');
 $pulpFiction->director = 'Quentin Tarantino';
 $pulpFiction->title =[
     'Uma Thurman',
@@ -21,6 +36,7 @@ $pulpFiction->title =[
 $pulpFiction->year = 1994;
 
 var_dump($pulpFiction);
+var_dump($pulpFiction->getTitle());
 
 
 
