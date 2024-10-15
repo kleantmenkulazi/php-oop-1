@@ -9,8 +9,17 @@ class Movie {
     public $duration;     // int
     public $vote;         // float
 
-function __construct($title, $director, $actors, $year, $genres, $plot, $duration, $vote) {
-    $this->title = $title;
+function __construct(
+    string $title, 
+    string $director, 
+    array $actors, 
+    int $year, 
+    string $genres = null, 
+    string $plot = null, 
+    string $duration = null, 
+    float $vote = null,
+) {
+    $this->setTitle($title);
     $this->directors = $director;
     $this->actors = $actors;
     $this->year = $year;
@@ -30,7 +39,7 @@ public function setTitle($title) {
         $this->title = $title;
     }
     else {
-         // Azione
+         showError('Titolo non valido');
     }
 }
 }
